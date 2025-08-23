@@ -1,0 +1,41 @@
+:host {
+  position: fixed;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: black;
+  color: white;
+  border-radius: 100px;
+  padding: 10px 16px 10px 22px;
+  gap: 4px;
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  align-items: center;
+
+  & > .toast__icon-close {
+    margin-left: 8px;
+    cursor: pointer;
+  }
+
+  animation: show-toast 0.3s, fade-out 5s;
+}
+
+@keyframes show-toast {
+  0% {
+    transform: translateX(-50%) translateY(-80px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

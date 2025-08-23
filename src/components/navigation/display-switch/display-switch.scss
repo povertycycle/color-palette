@@ -1,0 +1,44 @@
+:host {
+  height: 100%;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  & > button {
+    cursor: pointer;
+    height: 100%;
+    font-size: 20px;
+    @media screen and (max-width: 639px) {
+      font-size: 18px;
+    }
+    &:last-child {
+      padding: 0 12px 0 8px;
+    }
+    &:first-child {
+      padding: 0 8px 0 12px;
+    }
+
+    @media screen and (min-width: 640px) {
+      &:last-child {
+        padding: 0 16px 0 12px;
+      }
+      &:first-child {
+        padding: 0 12px 0 16px;
+      }
+    }
+    border: none;
+    color: black;
+    background: #e7e7e7;
+
+    &:hover {
+      background: #dedede;
+    }
+
+    &.switch-active {
+      color: white;
+      background: black;
+    }
+  }
+}
