@@ -29,6 +29,13 @@
                 "input": "public"
               }
             ],
+            "loader": {
+              ".svg": "text",
+              ".ttf": "text",
+              ".woff": "text",
+              ".woff2": "text",
+              ".eot": "text"
+            },
             "styles": [
               "src/styles.scss"
             ]
