@@ -14,9 +14,19 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "buildTarget": "color-palette:build:production",
+            "repo": "https://github.com/povertycycle/color-palette.git",
+            "branch": "gh-pages",
+            "dir": "dist/poverycycle/browser"
+          }
+        },
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/povertycycle",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
