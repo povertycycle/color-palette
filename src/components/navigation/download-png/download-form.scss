@@ -10,8 +10,10 @@
     flex-shrink: 0;
   }
 
-  & > i {
-    color: #6a6a6a;
+  & > rmx-icon {
+    color: #a7a7a7;
+    width: 20px;
+    height: 20px;
     margin-bottom: 2px;
   }
 

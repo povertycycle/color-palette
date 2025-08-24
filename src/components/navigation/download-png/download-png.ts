@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import { Toast } from '../../utils/toast/toast';
+import { AngularRemixIconComponent } from 'angular-remix-icon';
 import { Popup } from '../../utils/popup/popup';
 import { DownloadForm } from './download-form';
 
 @Component({
   selector: 'download-png',
   template: `<button (click)="openPopup()" class="output__button">
-      <span>Download PNG</span><i class="ri-palette-fill"></i>
+      <span>Download PNG</span><rmx-icon name="palette-fill"> </rmx-icon>
     </button>
     @if (show) {
     <popup [title]="'Download as PNG'" (closePopup)="closePopup()">
-      <download-form />
+      <download-form (closePopup)="closePopup()" />
     </popup>
     } `,
-  imports: [DownloadForm, Popup],
+  imports: [DownloadForm, Popup, AngularRemixIconComponent],
   styleUrl: './download-png.scss',
 })
 export class DownloadPNG {
@@ -27,6 +27,3 @@ export class DownloadPNG {
     this.show = false;
   }
 }
-
-function downloadAsPNG() {}
-// <toast [text]="show" (closeToast)="closeToast()" />
