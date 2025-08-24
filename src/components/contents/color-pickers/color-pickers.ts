@@ -9,7 +9,7 @@ import { CdkDragHandle, CdkDragPlaceholder } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'color-pickers',
   template: `<div
-    [style.background-color]="color"
+    [style.background-color]="_color"
     [attr.data-is-row]="isRow"
     [attr.data-is-dark]="isDark"
   >
@@ -31,7 +31,8 @@ import { CdkDragHandle, CdkDragPlaceholder } from '@angular/cdk/drag-drop';
       <input
         [value]="color"
         type="color"
-        (input)="handleColorChange($event.target.value)"
+        (input)="handleColorInput($event.target.value)"
+        (change)="handleColorChange($event.target.value)"
         width="0"
         height="0"
         #colorSelect
@@ -59,8 +60,12 @@ export class ColorPickers {
     return isDark(this.color);
   }
 
+  handleColorInput(value: string) {
+    this._color = value;
+  }
+
   handleColorChange(value: string) {
-    this.display.updateColor(value, this.idx);
+    this.display.updateColor(value.toUpperCase(), this.idx);
   }
 
   copyText() {
