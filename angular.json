@@ -49,7 +49,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "externalDependencies": [
+            "allowedCommonJsDependencies": [
               "html2canvas"
             ]
           },
