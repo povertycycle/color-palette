@@ -39,5 +39,5 @@ export function blendColors(colorA: string, colorB: string) {
   const b = Math.round(bA + (bB - bA) * 0.5)
     .toString(16)
     .padStart(2, '0');
-  return '#' + r + g + b;
+  return ('#' + r + g + b).toUpperCase();
 }
